@@ -7,6 +7,10 @@ Gradle v4.8
 
 # 项目启动
 ./gradlew bootRun  
-Get http://localhost:8080/hello
+Get http://localhost:8090/hello
+
+# 项目依赖
+lombok  
+jacoco
 
 # FAQ
