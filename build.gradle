@@ -5,6 +5,30 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.7.RELEASE'
 }
 
+jacocoTestReport {
+    reports {
+        xml.enabled = false
+        csv.enabled = false
+        html.enabled = true
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'PACKAGE'
+            includes = ['com.cherrow.spring.service',
+                        'com.cherrow.spring.domain']
+
+            limit {
+                counter = 'METHOD'
+                minimum = 0.8
+            }
+        }
+    }
+}
+
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
@@ -16,7 +40,7 @@ dependencies {
 
 // In this section you declare where to find the dependencies of your project
 repositories {
-    maven{ url'http://maven.aliyun.com/nexus/content/groups/public/'}
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
     jcenter()
 }
@@ -24,3 +48,6 @@ repositories {
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
+
+check.dependsOn jacocoTestCoverageVerification
+check.dependsOn jacocoTestReport
