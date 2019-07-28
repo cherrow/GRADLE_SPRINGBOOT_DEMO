@@ -1,0 +1,18 @@
+# idea ignore
+.idea/
+*.iml
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.tmp
+*debug.test
+
+_output
+_out
+
+# gradle ignore
+.gradle/
+gradle/
+build
