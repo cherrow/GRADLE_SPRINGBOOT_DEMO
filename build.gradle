@@ -19,11 +19,11 @@ jacocoTestCoverageVerification {
         rule {
             element = 'PACKAGE'
             includes = ['com.cherrow.spring.service',
-                        'com.cherrow.spring.domain']
+                        'com.cherrow.spring.controller']
 
             limit {
                 counter = 'METHOD'
-                minimum = 0.8
+                minimum = 1
             }
         }
     }
