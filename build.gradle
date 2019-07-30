@@ -22,7 +22,13 @@ jacocoTestCoverageVerification {
                         'com.cherrow.spring.controller']
 
             limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 1
+            }
+            limit {
                 counter = 'METHOD'
+                value = 'COVEREDRATIO'
                 minimum = 1
             }
         }
