@@ -7,6 +7,7 @@ SpringBoot v2.0.5
 Gradle v4.8
 
 # 项目启动
+构建项目： $ ./gradlew clean build  
 启动项目： $ ./gradlew bootRun  
 欢迎页： (GET) http://localhost:8090/hello
 
