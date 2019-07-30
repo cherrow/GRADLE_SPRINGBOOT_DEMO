@@ -2,10 +2,9 @@ package com.cherrow.spring.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import java.util.Objects;
 
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 public class User {
     private String name;
@@ -18,10 +17,14 @@ public class User {
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof User) {
-            User person = (User) obj;
-            return name.equalsIgnoreCase(person.getName().trim())
-                    && age == person.getAge();
+            User user = (User) obj;
+            return name.equals(user.getName()) && age == user.getAge();
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age);
     }
 }
