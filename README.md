@@ -7,8 +7,8 @@ SpringBoot v2.0.5
 Gradle v4.8
 
 # 项目启动
-运行项目： ./gradlew bootRun  
-主页： (GET) http://localhost:8090/hello
+启动项目： $ ./gradlew bootRun  
+欢迎页： (GET) http://localhost:8090/hello
 
 # 项目依赖
 lombok  
